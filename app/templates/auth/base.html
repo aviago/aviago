@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+        <title>Havana | {{ page_title }}</title>
+        <link href="/static/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    </head>
+    <body>
+        <div id="login-modal" class="modal show padding-top-30" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="text-center">Havana™</h1>
+                    </div>
+                    <div class="modal-footer">
+                        <div id='alerts'>
+                            {% with messages = get_flashed_messages(with_categories=true) %}
+                                {% if messages %}
+                                    {% for category, message in messages %}
+                                        {% if category == 'success' %}
+                                            {% set this_desc = 'Success' %}
+                                            {% set this_icon = 'ok' %}
+                                            {% set this_class = 'success' %}
+                                        {% elif category == 'danger' or category == 'error' %}
+                                            {% set this_desc = 'Error' %}
+                                            {% set this_icon = 'remove' %}
+                                            {% set this_class = 'danger' %}
+                                        {% endif %}
+
+                                        <div class="alert alert-{{ this_class }} text-left">
+                                            <strong>{{ this_desc }} </strong>{{ message }}
+                                        </div>
+                                    {% endfor %}
+                                {% endif %}
+                            {% endwith %}
+                        </div>
+
+                        {% block form %}
+
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="/static/js/jquery.min.js"></script>
+        <script src="/static/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    </body>
+</html>

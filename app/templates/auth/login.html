@@ -1,0 +1,16 @@
+{% extends 'auth/base.html' %}
+
+{% block form %}
+    <form class="form col-md-12 center-block" action="{{ url_for('Auth:post') }}" method="post">
+        <div class="form-group">
+            <input type="text" id="username" name="username" class="form-control input-lg" placeholder="Username" autofocus="" value="{{ req.username }}">
+        </div>
+        <div class="form-group">
+            <input type="password" id="password" name="password" class="form-control input-lg" placeholder="Password">
+        </div>
+        <div class="form-group">
+            <input type="submit" class="btn btn-success btn-lg btn-block" value="Sign In"/>
+            <a href="{{ url_for('Auth:signup') }}" class="btn btn-primary btn-lg btn-block">Register</a>
+        </div>
+    </form>
+{% endblock %}
