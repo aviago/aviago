@@ -9,4 +9,6 @@ class BaseConfig(object):
 
     APP_BASE = 'https://havana.exile-tek.com'
     APP_NAME = 'Havana'
-    SEND_FEEDBACK = True
+    SEND_FEEDBACK = True  # Send 500 HTTP errors to developers
+
+    DEFAULT_CREDIT_LIMIT = 10000  # Default credit limit on an account, in pence

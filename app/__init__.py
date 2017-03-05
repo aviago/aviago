@@ -3,7 +3,6 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_script import Server, Manager
 from flask_mail import Mail
 from flask_migrate import Migrate, MigrateCommand
-from app.commands import *
 import logging
 from logging.handlers import SMTPHandler
 
@@ -39,4 +38,4 @@ def do_imports(flask_app):
     import_routes(flask_app)
 
 do_imports(app)
-
+from app.commands import *
