@@ -1,0 +1,7 @@
+flask
+flask-sqlalchemy
+flask-mail
+flask-migrate
+flask-wtf
+flask-script
+flask-admin

@@ -1,0 +1,12 @@
+class BaseConfig(object):
+    PORT = 3000
+    DEBUG = True
+    SQLALCHEMY_POOL_RECYCLE = 0
+    SQLALCHEMY_TRACK_MODIFICATIONS = True
+    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://user:password@host/database'
+    PASSWORD_ENCRYPTION_KEY = 'A16DigitSecureStringHere'
+    SECRET_KEY = 'ASecretKeyHere'
+
+    APP_BASE = 'https://havana.exile-tek.com'
+    APP_NAME = 'Havana'
+    SEND_FEEDBACK = True
