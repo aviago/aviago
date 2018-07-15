@@ -34,7 +34,7 @@ class Auth(FlaskView):
             flash('Account name already in use', 'error')
             return self._render('auth/signup.html', 'Register')
         if User.query.filter_by(audit_is_deleted=False, username=request.form['username']).first():
-            flash('Username already taken', 'error')
+            flash('Username already in use', 'error')
             return self._render('auth/signup.html', 'Register')
         if User.query.filter_by(audit_is_deleted=False, email_address=request.form['email_address']).first():
             flash('Email address already in use', 'error')

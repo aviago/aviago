@@ -14,7 +14,8 @@ def generate_api_key():
 def seed_db():
     acct = Account.query.filter_by(name='Internal').first()
     if acct:
-        quit('DB contents already exist, Cannot seed')
+        print('DB contents already exist, Cannot seed again')
+        quit(1)
 
     accounts = [
         {'name': 'Internal', 'is_suspended': False},
